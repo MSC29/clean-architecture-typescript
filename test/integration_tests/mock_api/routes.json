@@ -1,0 +1,4 @@
+{
+    "/api/cats/facts": "/cats",
+    "/api/cats/fact": "/random"
+}

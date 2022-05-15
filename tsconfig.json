@@ -1,0 +1,46 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "lib": [
+            "es2016"
+        ],
+        "paths": {
+            "*": [
+                "src/*"
+            ],
+            "domain/*": [
+                "src/domain/*"
+            ],
+            "application/*": [
+                "src/application/*"
+            ],
+            "infrastructure/*": [
+                "src/infrastructure/*"
+            ],
+            "interfaces/*": [
+                "src/adapters/*"
+            ]
+        },
+        "allowJs": true,
+        "target": "es2016",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "outDir": "./dist",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "typeRoots": [
+            "./node_modules/@types",
+            "src/infrastructure/@types"
+        ],
+        "esModuleInterop": true
+    },
+    "include": [
+        "./src/**/*",
+        "./test/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.js"
+    ]
+}
