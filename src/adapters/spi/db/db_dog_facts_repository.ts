@@ -16,7 +16,7 @@ export class DogFactsRepository implements DogFactsRepositoryAbstract {
 	}
 
 	async getDogFactById(factId: number): Promise<DogFactEntity> {
-		const data: DogFact = await this.dbConnection.getManager().getRepository(DogFact).findOneBy({id: factId});
+		const data: DogFact = await this.dbConnection.getManager().getRepository(DogFact).findOne(factId);
 
 		if (data) {
 			return this.dogFactDbMapper.toEntity(data);

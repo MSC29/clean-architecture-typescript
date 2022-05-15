@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable security/detect-non-literal-fs-filename */
 /* eslint-disable security/detect-object-injection */
 /* eslint-disable @typescript-eslint/no-explicit-any */

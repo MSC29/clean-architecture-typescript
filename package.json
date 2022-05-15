@@ -39,7 +39,7 @@
         "pg": "^8.5.1",
         "reflect-metadata": "^0.1.13",
         "source-map-support": "^0.5.19",
-        "typeorm": "^0.3.6",
+        "typeorm": "^0.2.45",
         "typescript": "^4.6.4"
     },
     "devDependencies": {
@@ -80,7 +80,7 @@
         "ts-node": "^10.7.0",
         "ts-sinon": "^2.0.1",
         "tsconfig-paths": "^4.0.0",
-        "typeorm-fixtures-cli": "^1.9.1",
+        "typeorm-fixtures-cli": "^1.11.1",
         "yaml": "^2.1.0"
     }
 }

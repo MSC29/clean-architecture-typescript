@@ -15,6 +15,7 @@ jobs:
       - run: npm run build
       - run: npm run lint
       - run: npm run test:unit
+      # - run: npm run test:integration
 
   security:
     runs-on: ubuntu-latest

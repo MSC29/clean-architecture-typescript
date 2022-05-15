@@ -3,7 +3,7 @@ import {expect} from "chai";
 import {describe, it} from "mocha";
 import {StubbedInstance} from "ts-sinon";
 
-import {TestUnitRepositoriesUtils} from "../utils/unit.repositories.utils";
+import {TestUnitRepositoriesUtils} from "../utils/repositories_utils";
 import {GetOneRandomCatFactUseCase} from "application/usecases/get_one_random_cat_fact_usecase";
 import {CatFactsRepositoryAbstract} from "application/repositories/cat_facts_repository_abstract";
 import {CatFactEntity} from "domain/entities/cat_fact_entity";

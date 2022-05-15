@@ -5,8 +5,6 @@ node_modules
 
 .env.prod
 
-src/infrastructure/config/*-firebase-*
-
 /test/config/*.test.json
 *.zip
 
