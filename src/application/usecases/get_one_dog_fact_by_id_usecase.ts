@@ -16,7 +16,7 @@ export class GetOneDogFactByIdUseCase implements UseCaseInterface {
 	async execute(): Promise<DogFactEntity> {
 		try {
 			return await this.repository.getDogFactById(this.dogFactId);
-		} catch (err) {
+		} catch (err: unknown) {
 			throw ErrorHandling.createApplicationError(err, "Cannot get single dog fact");
 		}
 	}

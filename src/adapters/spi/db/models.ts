@@ -6,8 +6,8 @@ import {BaseModelEntity} from "domain/base/base.model.entity";
 export class DogFact extends BaseModelEntity {
 	@Column({type: "smallint"})
 	@PrimaryGeneratedColumn()
-	id: number;
+		id: number;
 
 	@Column({length: 255, nullable: true})
-	fact: string;
+		fact: string;
 }

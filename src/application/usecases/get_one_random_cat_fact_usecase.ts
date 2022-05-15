@@ -14,7 +14,7 @@ export class GetOneRandomCatFactUseCase implements UseCaseInterface {
 	async execute(): Promise<CatFactEntity> {
 		try {
 			return await this.repository.getRandomCatFact();
-		} catch (err) {
+		} catch (err: unknown) {
 			throw ErrorHandling.createApplicationError(err, "Cannot get random cat fact");
 		}
 	}

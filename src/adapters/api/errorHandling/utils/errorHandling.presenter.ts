@@ -9,17 +9,7 @@ export class ErrorHandlingPresenter {
 		return ErrorHandlingPresenter.errorPresenterMapper.toApi(error);
 	}
 
-	static createNotAuthorizedError(): ErrorPresenter {
-		const error: ApiException = new ApiException("Error: not authenticated or token expired", 401);
-		return ErrorHandlingPresenter.createPresenterError(error);
-	}
-
-	static createForbiddenError(): ErrorPresenter {
-		const error: ApiException = new ApiException("Error: resource not allowed", 403);
-		return ErrorHandlingPresenter.createPresenterError(error);
-	}
-
-	static createApplicationError(applicationError: Error): ErrorPresenter {
+	static createApplicationError(applicationError: unknown): ErrorPresenter {
 		let message: string;
 		if (applicationError instanceof ApiException) {
 			message = applicationError.message;

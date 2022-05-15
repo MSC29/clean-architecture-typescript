@@ -1,4 +1,4 @@
-import {BasePresenterEntity} from 'domain/base/base.presenter.entity';
+import {BasePresenterEntity} from "domain/base/base.presenter.entity";
 
 export interface ErrorPresenter extends BasePresenterEntity {
 	statusCode: number;

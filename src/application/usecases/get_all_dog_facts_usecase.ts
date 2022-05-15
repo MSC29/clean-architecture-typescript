@@ -14,7 +14,7 @@ export class GetAllDogFactsUseCase implements UseCaseInterface {
 	async execute(): Promise<DogFactEntity[]> {
 		try {
 			return await this.repository.getAllDogFacts();
-		} catch (err) {
+		} catch (err: unknown) {
 			throw ErrorHandling.createApplicationError(err, "Cannot get all dog facts");
 		}
 	}

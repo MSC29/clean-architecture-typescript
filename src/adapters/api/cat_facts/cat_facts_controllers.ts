@@ -18,7 +18,7 @@ const getAllCatFactsRouteSchema = async (req: FastifyRequest, reply: FastifyRepl
 		catFacts.forEach((catFact: CatFactEntity) => catFactsPresenter.push(catFactPresenterMapper.toApi(catFact)));
 
 		void reply.send(catFactsPresenter);
-	} catch (err) {
+	} catch (err: unknown) {
 		throw ErrorHandlingPresenter.createApplicationError(err);
 	}
 };
@@ -31,7 +31,7 @@ const getOneRandomCatFactRouteSchema = async (req: FastifyRequest, reply: Fastif
 		const catFact: CatFactEntity = await getOneRandomCatFactUseCase.execute();
 
 		void reply.send(catFactPresenterMapper.toApi(catFact));
-	} catch (err) {
+	} catch (err: unknown) {
 		throw ErrorHandlingPresenter.createApplicationError(err);
 	}
 };

@@ -30,15 +30,15 @@ server.register(fastifyEnv, envOptions).after((err: Error): void => {
 	void server.register(fastifyCors, {origin: "*"});
 
 	//spi
-	void server.register(db, server["config"]);
+	void server.register(db, server.config);
 	server.decorate("httpConnection", new HttpConnection());
 
 	//repositories
-	void server.register(repositories, server["config"]);
+	void server.register(repositories, server.config);
 
 	//routes
-	void server.register(catFactsRoutes, server["config"]);
-	void server.register(dogFactsRoutes, server["config"]);
+	void server.register(catFactsRoutes, server.config);
+	void server.register(dogFactsRoutes, server.config);
 });
 
 export default server;

@@ -1,3 +1,6 @@
+import {fastifyEnvOpt} from "@fastify/env";
+import {FastifyRegisterOptions} from "fastify";
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const schema: any = {
 	type: "object",
@@ -22,8 +25,8 @@ const schema: any = {
 	}
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const envOptions: any = {
+export const envOptions: FastifyRegisterOptions<fastifyEnvOpt> = {
+	confKey: "config",
 	schema,
 	dotenv: {
 		path: `.env.${process.env.ENV}`

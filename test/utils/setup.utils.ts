@@ -45,7 +45,7 @@ export class TestSetupUtils {
 				const entity: any = await builder.build(fixture);
 				await getRepository(entity.constructor.name).insert(entity);
 			}
-		} catch (err) {
+		} catch (err: unknown) {
 			console.error(err);
 			throw Error("cannot load fixtures");
 		}

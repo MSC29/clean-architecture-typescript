@@ -19,7 +19,7 @@ const getAllDogFactsRouteSchema = async (req: FastifyRequest, reply: FastifyRepl
 		dogFacts.forEach((dogFact: DogFactEntity) => dogFactsPresenter.push(dogFactPresenterMapper.toApi(dogFact)));
 
 		void reply.send(dogFactsPresenter);
-	} catch (err) {
+	} catch (err: unknown) {
 		throw ErrorHandlingPresenter.createApplicationError(err);
 	}
 };
@@ -33,7 +33,7 @@ const getOneDogFactByIdRouteSchema = async (req: FastifyRequest<DogFactRequest>,
 		const dogFact: DogFactEntity = await getOneDogFactByIdUseCase.execute();
 
 		void reply.send(dogFactPresenterMapper.toApi(dogFact));
-	} catch (err) {
+	} catch (err: unknown) {
 		throw ErrorHandlingPresenter.createApplicationError(err);
 	}
 };

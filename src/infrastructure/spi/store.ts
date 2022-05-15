@@ -25,7 +25,7 @@ const asyncDb: FastifyPluginAsync<ConfigEnvironment> = async (server: FastifyIns
 		console.log("connected to db");
 
 		server.decorate("dbConnection", new DbConnection(orm));
-	} catch (err) {
+	} catch (err: unknown) {
 		console.error("error connecting to db");
 		console.error(err);
 		throw err;

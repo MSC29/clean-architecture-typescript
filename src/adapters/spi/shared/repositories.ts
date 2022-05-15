@@ -11,8 +11,7 @@ import {CatFactsRepositoryAbstract} from "application/repositories/cat_facts_rep
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default fp((server: FastifyInstance, opts: any, next: (err?: FastifyError) => void): void => {
 	try {
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		const config: ConfigEnvironment = server["config"];
+		const config: ConfigEnvironment = server.config;
 
 		const catFactsRepository: CatFactsRepositoryAbstract = new CatFactsRepository(server.httpConnection, config.CATS_SOURCE);
 		server.decorate("catFactsRepository", catFactsRepository);
@@ -21,8 +20,13 @@ export default fp((server: FastifyInstance, opts: any, next: (err?: FastifyError
 		server.decorate("dogFactsRepository", dogFactsRepository);
 
 		return next();
-	} catch (err) {
+	} catch (err: unknown) {
 		console.error(err);
-		return next(err);
+		const fastifyError: FastifyError = {
+			code: err["code"] || "",
+			message: err["message"] || "",
+			name: err["name"] || ""
+		};
+		return next(fastifyError);
 	}
 });

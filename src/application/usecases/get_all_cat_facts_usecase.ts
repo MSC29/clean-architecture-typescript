@@ -14,7 +14,7 @@ export class GetAllCatFactsUseCase implements UseCaseInterface {
 	async execute(): Promise<CatFactEntity[]> {
 		try {
 			return await this.repository.getAllCatFacts();
-		} catch (err) {
+		} catch (err: unknown) {
 			throw ErrorHandling.createApplicationError(err, "Cannot get all cat facts");
 		}
 	}
