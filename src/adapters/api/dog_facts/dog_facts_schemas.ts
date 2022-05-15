@@ -7,17 +7,12 @@ export const getAllDogFactsRouteSchema: FastifySchema = {
 	response: {
 		200: {
 			description: "Successful response",
-			type: "object",
-			properties: {
-				list: {
-					type: "array",
-					items: {
-						type: "object",
-						properties: {
-							fact: {type: "string"},
-							nb_chars: {type: "number"}
-						}
-					}
+			type: "array",
+			items: {
+				type: "object",
+				properties: {
+					fact_id: {type: "number"},
+					txt: {type: "string"}
 				}
 			}
 		}

@@ -32,7 +32,8 @@
         "typeRoots": [
             "./node_modules/@types",
             "src/infrastructure/@types"
-        ]
+        ],
+        "esModuleInterop": true
     },
     "include": [
         "./src/**/*",

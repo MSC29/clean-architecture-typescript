@@ -1,5 +1,6 @@
 import {DogFactsRepositoryAbstract} from "application/repositories/dog_facts_repository_abstract";
 import {UseCaseInterface} from "application/usecases/interfaces";
+import {ErrorHandling} from "application/utils/errorHandling.utils";
 
 import {DogFactEntity} from "domain/entities/dog_fact_entity";
 
@@ -14,7 +15,7 @@ export class GetAllDogFactsUseCase implements UseCaseInterface {
 		try {
 			return await this.repository.getAllDogFacts();
 		} catch (err) {
-			throw err;
+			throw ErrorHandling.createApplicationError(err, "Cannot get all dog facts");
 		}
 	}
 }

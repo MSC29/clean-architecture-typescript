@@ -2,7 +2,7 @@ import {DogFact} from "adapters/spi/db/models";
 import {DogFactDbMapper} from "adapters/spi/db/db_mappers";
 import {DbMapper} from "application/mappers/db_mapper";
 import {DogFactsRepositoryAbstract} from "application/repositories/dog_facts_repository_abstract";
-import {GenericError} from "domain/base/generic.error.entity";
+import {ApiException} from "domain/base/api_exception";
 import {DogFactEntity} from "domain/entities/dog_fact_entity";
 import {DbConnection} from "./db_connection";
 
@@ -22,7 +22,7 @@ export class DogFactsRepository implements DogFactsRepositoryAbstract {
 			return this.dogFactDbMapper.toEntity(data);
 		}
 
-		throw new GenericError("couldn't retrieve Dog fact from id");
+		throw new ApiException("couldn't retrieve Dog fact from id");
 	}
 
 	async getAllDogFacts(): Promise<DogFactEntity[]> {

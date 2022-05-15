@@ -1,4 +1,4 @@
-import {CatFactEntity} from 'domain/entities/cat_fact_entity';
+import {CatFactEntity} from "domain/entities/cat_fact_entity";
 
 export interface CatFactsRepositoryAbstract {
 	getRandomCatFact(): Promise<CatFactEntity>;

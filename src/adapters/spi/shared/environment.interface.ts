@@ -1,7 +1,6 @@
 export interface ConfigEnvironment {
 	DATABASE_NAME: string;
-	DATABASE_URL: string;
+	DATABASE_USERNAME: string;
+	DATABASE_PASSWORD: string;
 	CATS_SOURCE: string;
-	DB_LOGGING: boolean;
-	DEBUG_LEVEL: string;
 }

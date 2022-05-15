@@ -11,11 +11,13 @@ import {DbConnection} from "adapters/spi/db/db_connection";
 const asyncDb: FastifyPluginAsync<ConfigEnvironment> = async (server: FastifyInstance, opts: ConfigEnvironment): Promise<void> => {
 	try {
 		const dbConfigOrm: ConnectionOptions = {
-			url: opts.DATABASE_URL,
+			database: opts.DATABASE_NAME,
+			username: "postgres",
+			password: "postgres",
 			type: "postgres",
-			entities: [path.join(__dirname, "/../../adapters/spi/db/models/**/*.*s")],
+			entities: [path.join(__dirname, "/../../adapters/spi/db/models.ts")],
 			synchronize: true,
-			logging: opts.DB_LOGGING
+			logging: false
 		};
 
 		const orm: Connection = await createConnection(dbConfigOrm);

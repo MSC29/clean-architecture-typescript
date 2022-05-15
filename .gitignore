@@ -3,7 +3,7 @@ node_modules
 /dist
 /.vscode
 
-.env.*
+.env.prod
 
 src/infrastructure/config/*-firebase-*
 

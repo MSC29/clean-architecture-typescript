@@ -6,7 +6,7 @@ import {CatFactApiModel, CatFactsApiModel} from "adapters/spi/api/http_models";
 import {CatFactHttpMapper} from "adapters/spi/api/http_mappers";
 import {CatFactsRepositoryAbstract} from "application/repositories/cat_facts_repository_abstract";
 import {HttpMapper} from "application/mappers/http_mapper";
-import {GenericError} from "domain/base/generic.error.entity";
+import {ApiException} from "domain/base/api_exception";
 import {CatFactEntity} from "domain/entities/cat_fact_entity";
 
 export class CatFactsRepository implements CatFactsRepositoryAbstract {
@@ -27,7 +27,7 @@ export class CatFactsRepository implements CatFactsRepositoryAbstract {
 			return this.catFactHttpMapper.toEntity(httpData.data);
 		}
 
-		throw new GenericError("couldn't retrieve random cat fact");
+		throw new ApiException("couldn't retrieve random cat fact");
 	}
 
 	async getAllCatFacts(): Promise<CatFactEntity[]> {

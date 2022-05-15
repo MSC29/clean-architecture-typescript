@@ -10,37 +10,61 @@ TODO: documenting key interfaces & classes for clearer understanding & to eviden
 
 # Installing
 
-I personnaly use [pipx](https://github.com/pypa/pipx/), [pyenv](https://github.com/pyenv/pyenv) & [pipenv](https://github.com/pypa/pipenv).
-
 ```bash
-pipenv install -r requirements.txt
-# OR
-pip install -r requirements.txt
+npm i
 ```
+
+# Database setup
+
+It's currently configued to run with Postgresl through TypeOrm (ORM), but this being clean architecture feel free to change it :)
+
+I suggest
+
+- postgresql [in docker](https://hub.docker.com/_/postgres/)
+- pgAdmin [install](https://www.pgadmin.org/download/pgadmin-4-apt/)
+
+create the databases (dev & test) based on the `.env.<env>` config  files.
+The `synchronize` option is set to true in the TypeOrm connection configuration, so it'll automatically create the data model (and update it).
 
 # Running
 
 define the environment on which we're running by adding `ENV=<env>`, which will use the `.env.<env>` file
 
+However, I'd suggest to use the npm scripts
+
 ```bash
-ENV=dev python main.py
+npm run run-ts:dev
 ```
 
 # Code quality & security
 
-Used in CI/CD; using setup.cfg to centralise all the config
+Used in CI/CD; code quality using EsLint with several plugins
 
 ```bash
-autopep8 -i -r --global-config=setup.cfg ./src
-pylint --rcfile=setup.cfg ./src
-flake8 --config=setup.cfg ./src
-mypy --config-file=setup.cfg ./src
+npm run lint
+npm run security:audit
 ```
 
 # Testing
 
+Here's what done in order to mock the SPI
+
+- db: yml fixtures to insert test data in the test database, using `typeorm-fixtures-cli`
+- http: create a fake api using `json-server` that serves the `db.json` content on the `routes.json` routes from the `test/integration_tests/mock_api` folder
+
+run the mock api
+
 ```bash
-ENV=test pytest
+npm run mock:api
+```
+
+run the tests
+
+```bash
+npm run test
+# OR
+npm run test:unit
+npm run test:integration
 ```
 
 # API Documentation

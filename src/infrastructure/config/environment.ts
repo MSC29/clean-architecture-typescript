@@ -1,27 +1,23 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const schema: any = {
 	type: "object",
-	required: ["DATABASE_NAME", "DATABASE_URL", "CATS_SOURCE"],
+	required: ["DATABASE_NAME", "DATABASE_USERNAME", "DATABASE_PASSWORD", "CATS_SOURCE"],
 	properties: {
 		DATABASE_NAME: {
 			type: "string",
 			default: ""
 		},
-		DATABASE_URL: {
+		DATABASE_USERNAME: {
+			type: "string",
+			default: ""
+		},
+		DATABASE_PASSWORD: {
 			type: "string",
 			default: ""
 		},
 		CATS_SOURCE: {
 			type: "string",
 			default: ""
-		},
-		DB_LOGGING: {
-			type: "boolean",
-			default: false
-		},
-		DEBUG_LEVEL: {
-			type: "string",
-			default: "error"
 		}
 	}
 };

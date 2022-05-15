@@ -14,8 +14,8 @@ export default fp((server: FastifyInstance, opts: any, next: (err?: FastifyError
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		const config: ConfigEnvironment = server["config"];
 
-		const datFactsRepository: CatFactsRepositoryAbstract = new CatFactsRepository(server.httpConnection, config.CATS_SOURCE);
-		server.decorate("datFactsRepository", datFactsRepository);
+		const catFactsRepository: CatFactsRepositoryAbstract = new CatFactsRepository(server.httpConnection, config.CATS_SOURCE);
+		server.decorate("catFactsRepository", catFactsRepository);
 
 		const dogFactsRepository: DogFactsRepositoryAbstract = new DogFactsRepository(server.dbConnection);
 		server.decorate("dogFactsRepository", dogFactsRepository);

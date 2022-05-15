@@ -4,18 +4,15 @@
     "description": "",
     "main": "src/index.js",
     "scripts": {
-        "build": "rm -rf dist && tsc --lib dom --sourceMap -p ./ && cp tsconfig.json dist/ && cp .env.local dist/",
+        "build": "rm -rf dist && tsc --lib dom --sourceMap -p ./ && cp tsconfig.json dist/ && cp .env.dev dist/",
         "lint": "eslint -c .eslintrc.js --ext .ts src/*",
-        "run-ts:local": "ENV=local ts-node -r tsconfig-paths/register --files ./src/index.ts",
-        "run-ts:test": "ENV=test ts-node -r tsconfig-paths/register --files ./src/index.ts",
         "run-ts:dev": "ENV=dev ts-node -r tsconfig-paths/register --files ./src/index.ts",
+        "run-ts:test": "ENV=test ts-node -r tsconfig-paths/register --files ./src/index.ts",
         "run-compiled:local": "ENV=local node -r ts-node/register/transpile-only -r tsconfig-paths/register ./dist/src/index.js",
-        "test:unit": "ENV=test ts-mocha -s 500 --paths -p tsconfig.json test/unitTests/**/*.test.ts",
-        "test:integration": "ENV=test ts-mocha --timeout 5000 -s 500 --paths -p tsconfig.json --file test/integrationTests/setup.test.ts test/integrationTests/*.test.ts",
-        "mock:api": "node test/integrationTests/mock-email-server/server.js",
+        "test:unit": "ENV=test ts-mocha --paths -p tsconfig.json test/unit_tests/**/test_*.ts",
+        "test:integration": "ENV=test ts-mocha --paths -p tsconfig.json --file test/integration_tests/setup.test.ts test/integration_tests/test_*.ts",
+        "mock:api": "json-server test/integration_tests/mock_api/db.json --routes test/integration_tests/mock_api/routes.json",
         "dev-docker-pg": "docker container start postgres-docker",
-        "dev-create-docker-pg": "docker run --name postgres-docker -e POSTGRES_PASSWORD= -d -p 5432:5432 postgres:12",
-        "test-pg": "psql \"dbname=mcp host=localhost user=postgres password=postgres port=5432\"",
         "security:audit": "npm audit --level=moderate"
     },
     "repository": {
@@ -26,11 +23,12 @@
     "license": "ISC",
     "homepage": "https://github.com/MSC29/clean-architecture-typescript",
     "dependencies": {
+        "@fastify/env": "^3.0.0",
         "axios": "^0.21.1",
         "config": "^3.3.3",
+        "dotenv": "^8.2.0",
         "fastify": "^3.12.0",
         "fastify-cors": "^4.1.0",
-        "fastify-env": "^2.1.0",
         "fastify-plugin": "^3.0.0",
         "fastify-swagger": "^3.5.0",
         "js-yaml": "^3.14.1",
@@ -38,8 +36,7 @@
         "reflect-metadata": "^0.1.13",
         "source-map-support": "^0.5.19",
         "typeorm": "^0.2.31",
-        "typescript": "^4.1.5",
-        "dotenv": "^8.2.0"
+        "typescript": "^4.1.5"
     },
     "devDependencies": {
         "@types/chai": "^4.2.15",
