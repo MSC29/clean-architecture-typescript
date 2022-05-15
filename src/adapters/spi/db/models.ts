@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/indent */
 import {Entity, Column, PrimaryGeneratedColumn} from "typeorm";
 
 import {BaseModelEntity} from "domain/base/base.model.entity";
@@ -6,8 +7,8 @@ import {BaseModelEntity} from "domain/base/base.model.entity";
 export class DogFact extends BaseModelEntity {
 	@Column({type: "smallint"})
 	@PrimaryGeneratedColumn()
-		id: number;
+	id: number;
 
 	@Column({length: 255, nullable: true})
-		fact: string;
+	fact: string;
 }

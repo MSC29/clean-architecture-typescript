@@ -3,7 +3,7 @@ import {expect} from "chai";
 import {describe, it} from "mocha";
 import {StubbedInstance} from "ts-sinon";
 
-import {TestUnitRepositoriesUtils} from "../utils/unit.repositories.utils";
+import {TestUnitRepositoriesUtils} from "../utils/repositories_utils";
 import {GetAllDogFactsUseCase} from "application/usecases/get_all_dog_facts_usecase";
 import {DogFactsRepositoryAbstract} from "application/repositories/dog_facts_repository_abstract";
 import {DogFactEntity} from "domain/entities/dog_fact_entity";

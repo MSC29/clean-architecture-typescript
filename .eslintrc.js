@@ -249,6 +249,7 @@ module.exports = {
 		"id-blacklist": "off",
 		"id-match": "off",
 		"import/order": "off",
+		"import/no-deprecated": "error",
 		"jsdoc/check-alignment": "error",
 		"jsdoc/check-indentation": "error",
 		"jsdoc/newline-after-description": "error",

@@ -3,8 +3,8 @@ import {expect} from "chai";
 import {Response} from "light-my-request";
 import {describe, it} from "mocha";
 
-import {TestResponseUtils} from "../utils/response.utils";
-import {TestRequestUtils} from "../utils/request.utils";
+import {TestResponseUtils} from "../utils/response_utils";
+import {TestRequestUtils} from "../utils/request_utils";
 import {CatFactPresenter} from "adapters/api/cat_facts/cat_facts_presenters";
 
 describe("API: Cat Facts", () => {

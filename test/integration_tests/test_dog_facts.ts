@@ -3,8 +3,8 @@ import {expect} from "chai";
 import {Response} from "light-my-request";
 import {describe, it} from "mocha";
 
-import {TestResponseUtils} from "../utils/response.utils";
-import {TestRequestUtils} from "../utils/request.utils";
+import {TestResponseUtils} from "../utils/response_utils";
+import {TestRequestUtils} from "../utils/request_utils";
 import {DogFactPresenter} from "adapters/api/dog_facts/dog_facts_presenters";
 
 describe("API: Dog Facts", () => {
