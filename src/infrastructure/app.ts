@@ -1,8 +1,8 @@
 import fastify, {FastifyInstance} from "fastify";
-import swagger from "fastify-swagger";
+import swagger from "@fastify/swagger";
 import {Server, IncomingMessage, ServerResponse} from "http";
 import fastifyEnv from "@fastify/env";
-import fastifyCors from "fastify-cors";
+import fastifyCors from "@fastify/cors";
 
 import {swaggerOptions} from "infrastructure/config/swagger";
 import {envOptions} from "infrastructure/config/environment";

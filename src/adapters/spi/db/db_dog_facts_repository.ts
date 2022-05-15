@@ -1,10 +1,10 @@
 import {DogFact} from "adapters/spi/db/models";
+import {DbConnection} from "adapters/spi/db/db_connection";
 import {DogFactDbMapper} from "adapters/spi/db/db_mappers";
 import {DbMapper} from "application/mappers/db_mapper";
 import {DogFactsRepositoryAbstract} from "application/repositories/dog_facts_repository_abstract";
 import {ApiException} from "domain/base/api_exception";
 import {DogFactEntity} from "domain/entities/dog_fact_entity";
-import {DbConnection} from "./db_connection";
 
 export class DogFactsRepository implements DogFactsRepositoryAbstract {
 	private dbConnection: DbConnection;
@@ -16,7 +16,7 @@ export class DogFactsRepository implements DogFactsRepositoryAbstract {
 	}
 
 	async getDogFactById(factId: number): Promise<DogFactEntity> {
-		const data: DogFact = await this.dbConnection.getManager().getRepository(DogFact).findOne(factId);
+		const data: DogFact = await this.dbConnection.getManager().getRepository(DogFact).findOneBy({id: factId});
 
 		if (data) {
 			return this.dogFactDbMapper.toEntity(data);
