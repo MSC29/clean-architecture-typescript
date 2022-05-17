@@ -1,12 +1,10 @@
 # Clean architecture: typescript
 
-A Clean Archtiecture template for a Rest API in typescript
+A Clean Architecture template for a Rest API in typescript
 
 # How it works
 
-TODO: proper doc & link to Rust & TypeScript repo
-
-TODO: documenting key interfaces & classes for clearer understanding & to evidence benefits of Clean Architecture
+Motivations, explanations, requirements & more details in my article [Practical Clean Architecture in Typescript, Rust & Python](https://dev.to/msc29/practical-clean-architecture-in-typescript-rust-python-3a6d)
 
 # Installing
 
@@ -16,11 +14,11 @@ npm i
 
 # Database setup
 
-It's currently configued to run with Postgresl through TypeOrm (ORM), but this being clean architecture feel free to change it :)
+It's currently configured to run with PostgreSQL through TypeOrm (ORM), but this being clean architecture feel free to change it :)
 
 I suggest
 
-- postgresql [in docker](https://hub.docker.com/_/postgres/)
+- PostgreSQL [in docker](https://hub.docker.com/_/postgres/)
 - pgAdmin [install](https://www.pgadmin.org/download/pgadmin-4-apt/)
 
 create the databases (dev & test) based on the `.env.<env>` config  files.
@@ -69,4 +67,4 @@ npm run test:integration
 
 # API Documentation
 
-`http://127.0.0.1:8080/docs`
+swagger: `http://127.0.0.1:8080/docs`
