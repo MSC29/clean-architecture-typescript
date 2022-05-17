@@ -15,7 +15,7 @@ const asyncDb: FastifyPluginAsync<ConfigEnvironment> = async (server: FastifyIns
 			username: "postgres",
 			password: "postgres",
 			type: "postgres",
-			entities: [path.join(__dirname, "/../../adapters/spi/db/models.ts")],
+			entities: [path.join(__dirname, "/../../adapters/spi/db/db_models.ts")],
 			synchronize: true,
 			logging: false
 		};
