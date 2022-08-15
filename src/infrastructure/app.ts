@@ -12,7 +12,7 @@ import repositories from "adapters/spi/shared/repositories";
 
 import catFactsRoutes from "adapters/api/cat_facts/cat_facts_routes";
 import dogFactsRoutes from "adapters/api/dog_facts/dog_facts_routes";
-import {HttpConnection} from "adapters/spi/api/http_connection";
+import {HttpConnection} from "adapters/spi/http/http_connection";
 
 const env: NodeJS.ProcessEnv = process.env;
 const server: FastifyInstance<Server, IncomingMessage, ServerResponse> = fastify({logger: env.ENV === "test" ? false : true});

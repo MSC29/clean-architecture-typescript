@@ -1,9 +1,9 @@
 //TODO remove that
 import {AxiosResponse} from "axios";
 
-import {HttpConnection} from "adapters/spi/api/http_connection";
-import {CatFactApiModel, CatFactsApiModel} from "adapters/spi/api/http_models";
-import {CatFactHttpMapper} from "adapters/spi/api/http_mappers";
+import {HttpConnection} from "adapters/spi/http/http_connection";
+import {CatFactApiModel, CatFactsApiModel} from "adapters/spi/http/http_models";
+import {CatFactHttpMapper} from "adapters/spi/http/http_mappers";
 import {CatFactsRepositoryAbstract} from "application/repositories/cat_facts_repository_abstract";
 import {HttpMapper} from "application/mappers/http_mapper";
 import {ApiException} from "domain/base/api_exception";
