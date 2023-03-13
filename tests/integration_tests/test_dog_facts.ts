@@ -5,7 +5,7 @@ import {describe, it} from "mocha";
 
 import {TestResponseUtils} from "../utils/response_utils";
 import {TestRequestUtils} from "../utils/request_utils";
-import {DogFactPresenter} from "adapters/api/dog_facts/dog_facts_presenters";
+import {DogFactPresenter} from "adapter/api/dog_facts/dog_facts_presenters";
 
 describe("API: Dog Facts", () => {
 	const urlApi: string = "api/v1";

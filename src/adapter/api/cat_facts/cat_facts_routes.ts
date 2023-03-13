@@ -1,8 +1,8 @@
 import fp from "fastify-plugin";
 import {FastifyReply, FastifyInstance, FastifyPluginAsync, FastifyRequest} from "fastify";
 
-import {getAllCatFactsRouteSchema, getOneRandomCatFactRouteSchema} from "adapters/api/cat_facts/cat_facts_schemas";
-import catFactController from "adapters/api/cat_facts/cat_facts_controllers";
+import {getAllCatFactsRouteSchema, getOneRandomCatFactRouteSchema} from "adapter/api/cat_facts/cat_facts_schemas";
+import catFactController from "adapter/api/cat_facts/cat_facts_controllers";
 
 // eslint-disable-next-line @typescript-eslint/require-await
 const asyncRoutes: FastifyPluginAsync = async (server: FastifyInstance): Promise<void> => {

@@ -18,7 +18,7 @@
                 "src/infrastructure/*"
             ],
             "interfaces/*": [
-                "src/adapters/*"
+                "src/adapter/*"
             ]
         },
         "allowJs": true,

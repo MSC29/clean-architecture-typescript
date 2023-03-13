@@ -1,4 +1,4 @@
-import {CatFactApiModel} from "adapters/spi/http/http_models";
+import {CatFactApiModel} from "adapter/spi/http/http_models";
 import {HttpMapper} from "application/mappers/http_mapper";
 import {CatFactEntity} from "domain/entities/cat_fact_entity";
 

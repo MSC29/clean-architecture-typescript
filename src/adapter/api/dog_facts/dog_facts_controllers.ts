@@ -1,9 +1,9 @@
 import {FastifyReply, FastifyInstance, FastifyRequest} from "fastify";
 
-import {ErrorHandlingPresenter} from "adapters/api/errorHandling/utils/errorHandling.presenter";
-import {DogFactPresenterMapper} from "adapters/api/dog_facts/dog_facts_mappers";
-import {DogFactPresenter} from "adapters/api/dog_facts/dog_facts_presenters";
-import {DogFactRequest} from "adapters/api/dog_facts/dog_facts_requests";
+import {ErrorHandlingPresenter} from "adapter/api/errorHandling/utils/errorHandling.presenter";
+import {DogFactPresenterMapper} from "adapter/api/dog_facts/dog_facts_mappers";
+import {DogFactPresenter} from "adapter/api/dog_facts/dog_facts_presenters";
+import {DogFactRequest} from "adapter/api/dog_facts/dog_facts_requests";
 import {GetAllDogFactsUseCase} from "application/usecases/get_all_dog_facts_usecase";
 import {GetOneDogFactByIdUseCase} from "application/usecases/get_one_dog_fact_by_id_usecase";
 import {DogFactEntity} from "domain/entities/dog_fact_entity";

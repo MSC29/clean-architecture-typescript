@@ -1,8 +1,8 @@
 import {FastifyReply, FastifyInstance, FastifyRequest} from "fastify";
 
-import {ErrorHandlingPresenter} from "adapters/api/errorHandling/utils/errorHandling.presenter";
-import {CatFactPresenterMapper} from "adapters/api/cat_facts/cat_facts_mappers";
-import {CatFactPresenter} from "adapters/api/cat_facts//cat_facts_presenters";
+import {ErrorHandlingPresenter} from "adapter/api/errorHandling/utils/errorHandling.presenter";
+import {CatFactPresenterMapper} from "adapter/api/cat_facts/cat_facts_mappers";
+import {CatFactPresenter} from "adapter/api/cat_facts//cat_facts_presenters";
 import {GetAllCatFactsUseCase} from "application/usecases/get_all_cat_facts_usecase";
 import {GetOneRandomCatFactUseCase} from "application/usecases/get_one_random_cat_fact_usecase";
 import {CatFactEntity} from "domain/entities/cat_fact_entity";

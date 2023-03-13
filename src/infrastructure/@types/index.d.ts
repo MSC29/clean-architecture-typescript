@@ -1,8 +1,8 @@
-import {HttpConnection} from "adapters/spi/http/http_connection";
-import {DbConnection} from "adapters/spi/db/db_connection";
+import {HttpConnection} from "adapter/spi/http/http_connection";
+import {DbConnection} from "adapter/spi/db/db_connection";
 import {DogFactsRepositoryAbstract} from "application/repositories/dog_facts_repository_abstract";
 import {CatFactsRepositoryAbstract} from "application/repositories/cat_facts_repository_abstract";
-import {ConfigEnvironment} from "adapters/spi/shared/environment.interface";
+import {ConfigEnvironment} from "adapter/spi/shared/environment.interface";
 
 declare module "fastify" {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars

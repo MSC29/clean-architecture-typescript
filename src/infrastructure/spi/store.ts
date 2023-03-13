@@ -5,8 +5,8 @@ import "reflect-metadata";
 import {Connection, ConnectionOptions, createConnection} from "typeorm";
 import * as path from "path";
 
-import {ConfigEnvironment} from "adapters/spi/shared/environment.interface";
-import {DbConnection} from "adapters/spi/db/db_connection";
+import {ConfigEnvironment} from "adapter/spi/shared/environment.interface";
+import {DbConnection} from "adapter/spi/db/db_connection";
 
 const asyncDb: FastifyPluginAsync<ConfigEnvironment> = async (server: FastifyInstance, opts: ConfigEnvironment): Promise<void> => {
 	try {
@@ -15,7 +15,7 @@ const asyncDb: FastifyPluginAsync<ConfigEnvironment> = async (server: FastifyIns
 			username: "postgres",
 			password: "postgres",
 			type: "postgres",
-			entities: [path.join(__dirname, "/../../adapters/spi/db/db_models.ts")],
+			entities: [path.join(__dirname, "/../../adapter/spi/db/db_models.ts")],
 			synchronize: true,
 			logging: false
 		};

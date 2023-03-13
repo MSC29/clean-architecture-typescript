@@ -5,7 +5,7 @@ node_modules
 
 .env.prod
 
-/test/config/*.test.json
+/tests/config/*.test.json
 *.zip
 
 .VSCodeCounter/

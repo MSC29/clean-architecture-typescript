@@ -12,9 +12,9 @@
         "run-ts:dev": "ENV=dev ts-node -r tsconfig-paths/register --files ./src/index.ts",
         "run-ts:test": "ENV=test ts-node -r tsconfig-paths/register --files ./src/index.ts",
         "run-compiled:local": "ENV=local node -r ts-node/register/transpile-only -r tsconfig-paths/register ./dist/src/index.js",
-        "test:unit": "ENV=test ts-mocha --paths -p tsconfig.json test/unit_tests/**/test_*.ts",
-        "test:integration": "ENV=test ts-mocha --paths -p tsconfig.json --file test/integration_tests/setup.test.ts test/integration_tests/test_*.ts",
-        "mock:api": "json-server test/integration_tests/mock_api/db.json --routes test/integration_tests/mock_api/routes.json",
+        "test:unit": "ENV=test ts-mocha --paths -p tsconfig.json tests/unit_tests/**/test_*.ts",
+        "test:integration": "ENV=test ts-mocha --paths -p tsconfig.json --file tests/integration_tests/setup.test.ts tests/integration_tests/test_*.ts",
+        "mock:api": "json-server tests/integration_tests/mock_api/db.json --routes tests/integration_tests/mock_api/routes.json",
         "dev-docker-pg": "docker container start postgres-docker",
         "security:audit": "npm audit --level=moderate",
         "dependencies:outdated": "npm outdated"

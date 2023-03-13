@@ -1,4 +1,4 @@
-import {CatFactPresenter} from "adapters/api/cat_facts/cat_facts_presenters";
+import {CatFactPresenter} from "adapter/api/cat_facts/cat_facts_presenters";
 
 import {ApiMapper} from "application/mappers/api.mapper";
 

@@ -2,8 +2,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 import {StubbedInstance, stubObject} from "ts-sinon";
 
-import {CatFactsRepository} from "adapters/spi/http/http_cat_facts_repository";
-import {DogFactsRepository} from "adapters/spi/db/db_dog_facts_repository";
+import {CatFactsRepository} from "adapter/spi/http/http_cat_facts_repository";
+import {DogFactsRepository} from "adapter/spi/db/db_dog_facts_repository";
 import {CatFactsRepositoryAbstract} from "application/repositories/cat_facts_repository_abstract";
 import {DogFactsRepositoryAbstract} from "application/repositories/dog_facts_repository_abstract";
 import {CatFactEntity} from "domain/entities/cat_fact_entity";

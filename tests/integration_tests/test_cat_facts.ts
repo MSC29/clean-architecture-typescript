@@ -5,7 +5,7 @@ import {describe, it} from "mocha";
 
 import {TestResponseUtils} from "../utils/response_utils";
 import {TestRequestUtils} from "../utils/request_utils";
-import {CatFactPresenter} from "adapters/api/cat_facts/cat_facts_presenters";
+import {CatFactPresenter} from "adapter/api/cat_facts/cat_facts_presenters";
 
 describe("API: Cat Facts", () => {
 	const urlApi: string = "api/v1";

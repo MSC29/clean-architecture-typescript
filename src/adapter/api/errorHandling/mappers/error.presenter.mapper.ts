@@ -1,4 +1,4 @@
-import {ErrorPresenter} from "adapters/api/errorHandling/entities/error.presenter";
+import {ErrorPresenter} from "adapter/api/errorHandling/entities/error.presenter";
 
 import {ApiMapper} from "application/mappers/api.mapper";
 

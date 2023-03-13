@@ -1,4 +1,4 @@
-import {DogFact} from "adapters/spi/db/db_models";
+import {DogFact} from "adapter/spi/db/db_models";
 import {DbMapper} from "application/mappers/db_mapper";
 import {DogFactEntity} from "domain/entities/dog_fact_entity";
 

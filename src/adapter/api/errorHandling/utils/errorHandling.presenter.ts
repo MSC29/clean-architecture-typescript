@@ -1,6 +1,6 @@
 import {ApiException} from "domain/base/api_exception";
-import {ErrorPresenter} from "adapters/api/errorHandling/entities/error.presenter";
-import {ErrorPresenterMapper} from "adapters/api/errorHandling/mappers/error.presenter.mapper";
+import {ErrorPresenter} from "adapter/api/errorHandling/entities/error.presenter";
+import {ErrorPresenterMapper} from "adapter/api/errorHandling/mappers/error.presenter.mapper";
 
 export class ErrorHandlingPresenter {
 	static errorPresenterMapper: ErrorPresenterMapper = new ErrorPresenterMapper();

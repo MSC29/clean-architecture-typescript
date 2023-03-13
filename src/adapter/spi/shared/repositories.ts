@@ -2,9 +2,9 @@ import fp from "fastify-plugin";
 import {FastifyError, FastifyInstance} from "fastify";
 import "reflect-metadata";
 
-import {ConfigEnvironment} from "adapters/spi/shared/environment.interface";
-import {DogFactsRepository} from "adapters/spi/db/db_dog_facts_repository";
-import {CatFactsRepository} from "adapters/spi/http/http_cat_facts_repository";
+import {ConfigEnvironment} from "adapter/spi/shared/environment.interface";
+import {DogFactsRepository} from "adapter/spi/db/db_dog_facts_repository";
+import {CatFactsRepository} from "adapter/spi/http/http_cat_facts_repository";
 import {DogFactsRepositoryAbstract} from "application/repositories/dog_facts_repository_abstract";
 import {CatFactsRepositoryAbstract} from "application/repositories/cat_facts_repository_abstract";
 

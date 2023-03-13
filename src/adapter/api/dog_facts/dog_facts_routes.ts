@@ -1,9 +1,9 @@
 import fp from "fastify-plugin";
 import {FastifyReply, FastifyInstance, FastifyPluginAsync, FastifyRequest} from "fastify";
 
-import {getAllDogFactsRouteSchema, getOneDogFactByIdRouteSchema} from "adapters/api/dog_facts/dog_facts_schemas";
-import dogFactController from "adapters/api/dog_facts/dog_facts_controllers";
-import {DogFactRequest} from "adapters/api/dog_facts/dog_facts_requests";
+import {getAllDogFactsRouteSchema, getOneDogFactByIdRouteSchema} from "adapter/api/dog_facts/dog_facts_schemas";
+import dogFactController from "adapter/api/dog_facts/dog_facts_controllers";
+import {DogFactRequest} from "adapter/api/dog_facts/dog_facts_requests";
 
 // eslint-disable-next-line @typescript-eslint/require-await
 const asyncRoutes: FastifyPluginAsync = async (server: FastifyInstance): Promise<void> => {

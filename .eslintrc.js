@@ -332,7 +332,7 @@ module.exports = {
 	},
 	overrides: [
 		{
-			files: ["test/**/**.*", "*.test.ts"],
+			files: ["tests/**/**.*", "*.test.ts"],
 			rules: {
 				"no-unused-expressions": "off"
 			}

@@ -1,4 +1,4 @@
-import {DogFactPresenter} from "adapters/api/dog_facts/dog_facts_presenters";
+import {DogFactPresenter} from "adapter/api/dog_facts/dog_facts_presenters";
 
 import {ApiMapper} from "application/mappers/api.mapper";
 

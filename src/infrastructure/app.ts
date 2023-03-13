@@ -8,11 +8,11 @@ import {swaggerOptions} from "infrastructure/config/swagger";
 import {envOptions} from "infrastructure/config/environment";
 
 import db from "infrastructure/spi/store";
-import repositories from "adapters/spi/shared/repositories";
+import repositories from "adapter/spi/shared/repositories";
 
-import catFactsRoutes from "adapters/api/cat_facts/cat_facts_routes";
-import dogFactsRoutes from "adapters/api/dog_facts/dog_facts_routes";
-import {HttpConnection} from "adapters/spi/http/http_connection";
+import catFactsRoutes from "adapter/api/cat_facts/cat_facts_routes";
+import dogFactsRoutes from "adapter/api/dog_facts/dog_facts_routes";
+import {HttpConnection} from "adapter/spi/http/http_connection";
 
 const env: NodeJS.ProcessEnv = process.env;
 const server: FastifyInstance<Server, IncomingMessage, ServerResponse> = fastify({logger: env.ENV === "test" ? false : true});
