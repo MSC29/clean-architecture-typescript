@@ -4,16 +4,17 @@ import "reflect-metadata";
 
 import {ConfigEnvironment} from "adapter/spi/shared/environment.interface";
 import {DogFactsRepository} from "adapter/spi/db/db_dog_facts_repository";
-import {CatFactsRepository} from "adapter/spi/http/http_cat_facts_repository";
+import {CatFactsRepository} from "adapter/spi/db/db_cat_facts_repository";
 import {DogFactsRepositoryAbstract} from "application/repositories/dog_facts_repository_abstract";
 import {CatFactsRepositoryAbstract} from "application/repositories/cat_facts_repository_abstract";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default fp((server: FastifyInstance, opts: any, next: (err?: FastifyError) => void): void => {
 	try {
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		const config: ConfigEnvironment = server.config;
 
-		const catFactsRepository: CatFactsRepositoryAbstract = new CatFactsRepository(server.httpConnection, config.CATS_SOURCE);
+		const catFactsRepository: CatFactsRepositoryAbstract = new CatFactsRepository(server.dbConnection);
 		server.decorate("catFactsRepository", catFactsRepository);
 
 		const dogFactsRepository: DogFactsRepositoryAbstract = new DogFactsRepository(server.dbConnection);

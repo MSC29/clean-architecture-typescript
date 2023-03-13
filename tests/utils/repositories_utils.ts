@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 import {StubbedInstance, stubObject} from "ts-sinon";
 
-import {CatFactsRepository} from "adapter/spi/http/http_cat_facts_repository";
+import {CatFactsRepository} from "adapter/spi/db/db_cat_facts_repository";
 import {DogFactsRepository} from "adapter/spi/db/db_dog_facts_repository";
 import {CatFactsRepositoryAbstract} from "application/repositories/cat_facts_repository_abstract";
 import {DogFactsRepositoryAbstract} from "application/repositories/dog_facts_repository_abstract";
@@ -12,7 +12,7 @@ import {DogFactEntity} from "domain/entities/dog_fact_entity";
 
 export class TestUnitRepositoriesUtils {
 	static createCatFactsRepository(catFacts: CatFactEntity[]): StubbedInstance<CatFactsRepositoryAbstract> {
-		const repo: CatFactsRepository = new CatFactsRepository(null, "fake_source");
+		const repo: CatFactsRepository = new CatFactsRepository(null);
 		return stubObject<CatFactsRepositoryAbstract>(repo, {
 			getAllCatFacts: new Promise((resolve: any): CatFactEntity => resolve(catFacts)),
 			getRandomCatFact: new Promise((resolve: any): CatFactEntity => resolve(catFacts[0]))
@@ -20,7 +20,7 @@ export class TestUnitRepositoriesUtils {
 	}
 
 	static createCatFactsRepositoryUnexpectedExceptions(): StubbedInstance<CatFactsRepositoryAbstract> {
-		const repo: CatFactsRepository = new CatFactsRepository(null, "fake_source");
+		const repo: CatFactsRepository = new CatFactsRepository(null);
 		return stubObject<CatFactsRepositoryAbstract>(repo, {
 			getAllCatFacts: new Promise((resolve: any, reject: (reason?: any) => void): void => reject(new Error("oh no!"))),
 			getRandomCatFact: new Promise((resolve: any, reject: (reason?: any) => void): void => reject(new Error("oh no!")))
@@ -28,7 +28,7 @@ export class TestUnitRepositoriesUtils {
 	}
 
 	static createCatFactsRepositoryExpectedExceptions(): StubbedInstance<CatFactsRepositoryAbstract> {
-		const repo: CatFactsRepository = new CatFactsRepository(null, "fake_source");
+		const repo: CatFactsRepository = new CatFactsRepository(null);
 		return stubObject<CatFactsRepositoryAbstract>(repo, {
 			getAllCatFacts: new Promise((resolve: any, reject: (reason?: any) => void): void => reject(new ApiException("exception in repo"))),
 			getRandomCatFact: new Promise((resolve: any, reject: (reason?: any) => void): void => reject(new ApiException("exception in repo")))

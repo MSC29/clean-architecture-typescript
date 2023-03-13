@@ -30,7 +30,8 @@ export class TestSetupUtils {
 			await connection.synchronize(true);
 
 			const loader: Loader = new Loader();
-			loader.load(path.resolve("tests/integration_tests/fixtures"));
+			loader.load(path.resolve("tests/integration_tests/fixtures/cat_facts.yml"));
+			loader.load(path.resolve("tests/integration_tests/fixtures/dog_facts.yml"));
 
 			const resolver: Resolver = new Resolver();
 			const fixtures: IFixture[] = resolver.resolve(loader.fixtureConfigs);
