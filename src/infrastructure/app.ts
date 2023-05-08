@@ -8,11 +8,11 @@ import {swaggerOptions} from "infrastructure/config/swagger";
 import {envOptions} from "infrastructure/config/environment";
 
 import db from "infrastructure/spi/store";
+import http from "infrastructure/spi/http";
 import repositories from "adapter/spi/shared/repositories";
 
 import catFactsRoutes from "adapter/api/cat_facts/cat_facts_routes";
 import dogFactsRoutes from "adapter/api/dog_facts/dog_facts_routes";
-import {HttpConnection} from "adapter/spi/http/http_connection";
 
 const env: NodeJS.ProcessEnv = process.env;
 const server: FastifyInstance<Server, IncomingMessage, ServerResponse> = fastify({logger: env.ENV === "test" ? false : true});
@@ -31,7 +31,7 @@ server.register(fastifyEnv, envOptions).after((err: Error): void => {
 
 	//spi
 	void server.register(db, server.config);
-	server.decorate("httpConnection", new HttpConnection());
+	void server.register(http, server.config);
 
 	//repositories
 	void server.register(repositories, server.config);

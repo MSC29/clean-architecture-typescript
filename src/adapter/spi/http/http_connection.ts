@@ -1,19 +1,25 @@
-import axios, {AxiosResponse} from "axios";
+import {AxiosResponse, AxiosStatic} from "axios";
 
 export class HttpConnection {
+	private http_driver: AxiosStatic;
+
+	constructor(http_driver: AxiosStatic) {
+		this.http_driver = http_driver;
+	}
+
 	public get<T>(url: string): Promise<AxiosResponse<T>> {
-		return axios.get(url);
+		return this.http_driver.get(url);
 	}
 
 	public post<T, P>(url: string, body: T): Promise<AxiosResponse<P>> {
-		return axios.post(url, body);
+		return this.http_driver.post(url, body);
 	}
 
 	public put<T, P>(url: string, body: T): Promise<AxiosResponse<P>> {
-		return axios.put(url, body);
+		return this.http_driver.put(url, body);
 	}
 
 	public delete<T>(url: string): Promise<AxiosResponse<T>> {
-		return axios.delete(url);
+		return this.http_driver.delete(url);
 	}
 }

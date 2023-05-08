@@ -1,14 +1,14 @@
 import {Connection, EntityManager} from "typeorm";
 
 export class DbConnection {
-	private connection: Connection;
+	private db_driver: Connection;
 
-	constructor(connection: Connection) {
-		this.connection = connection;
+	constructor(db_driver: Connection) {
+		this.db_driver = db_driver;
 	}
 
 	// TODO harmonize names
 	public getManager(): EntityManager {
-		return this.connection.manager;
+		return this.db_driver.manager;
 	}
 }
