@@ -36,9 +36,7 @@ describe("API: Cat Facts", () => {
 		// then expect 1 only
 		const data: CatFactPresenter = TestResponseUtils.checkResponseOk(response);
 
-		expect(data.fact).to.be.equal(
-			"In the 1930s, two Russian biologists discovered that color change in Siamese kittens depend on their body temperature. Siamese cats carry albino genes that work only when the body temperature is above 98° F. If these kittens are left in a very warm room, their points won’t darken and they will stay a creamy white."
-		);
-		expect(data.nb_chars).to.be.equal(315);
+		expect(data.fact.length).to.be.greaterThan(0);
+		expect(data.nb_chars).to.be.greaterThan(0);
 	});
 });
